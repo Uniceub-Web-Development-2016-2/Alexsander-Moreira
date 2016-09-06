@@ -40,7 +40,7 @@ tags:
   - name: Comments
   - name: Ranking
   - name: Delays
-  - name: Route
+  - name: Path
   - name: Alerts
 
 ################################################################################

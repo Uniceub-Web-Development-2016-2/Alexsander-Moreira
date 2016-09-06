@@ -42,12 +42,42 @@
             "name": "Delays"
         },
         {
-            "name": "Location"
+            "name": "Path"
         },
         {
             "name": "Alerts"
         }
     ],
+    "parameters": {
+        "user-id": {
+            "name": "user-id",
+            "in": "path",
+            "description": "The user identifier number",
+            "type": "number",
+            "required": true
+        },
+        "companies-id": {
+            "name": "companies-id",
+            "in": "path",
+            "description": "The companies identifier number",
+            "type": "number",
+            "required": true
+        },
+        "vehicles-id": {
+            "name": "vehicles-id",
+            "in": "path",
+            "description": "The vehicles identifier number",
+            "type": "number",
+            "required": true
+        },
+        "route-id": {
+            "name": "route-id",
+            "in": "path",
+            "description": "The route identifier number",
+            "type": "number",
+            "required": true
+        }
+    },
     "paths": {
         "/Admin": {
             "get": {
