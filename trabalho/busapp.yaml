@@ -6,7 +6,7 @@
 swagger: '2.0'
 
 ################################################################################
-#                              API Information                                 #
+#                                API Information                               #
 ################################################################################
 
 info:
@@ -28,7 +28,7 @@ consumes:
   - application/json
   
 ################################################################################
-#                                   Tags                                       #
+#                                      Tags                                    #
 ################################################################################ 
 
 tags:
@@ -40,17 +40,44 @@ tags:
   - name: Comments
   - name: Ranking
   - name: Delays
-  - name: Location
+  - name: Path
   - name: Alerts
 
 ################################################################################
 #                                   Parameters                                 #
 ################################################################################
 
-
+parameters:
+  user-id:
+    name: user-id
+    in: path
+    description: The user identifier number
+    type: number
+    required: true
+    
+  companies-id:
+    name: companies-id
+    in: path
+    description: The companies identifier number
+    type: number
+    required: true
+    
+  vehicles-id:
+    name: vehicles-id
+    in: path
+    description: The vehicles identifier number
+    type: number
+    required: true
+    
+  path-id:
+    name: path-id
+    in: path
+    description: The path identifier number
+    type: number
+    required: true
 
 ################################################################################
-#                                           Paths                              #
+#                                     Paths                                    #
 ################################################################################
 
 # Describe your paths here
@@ -92,3 +119,8 @@ paths:
                   type: string
                 single:
                   type: boolean
+                  
+################################################################################
+#                                 Definitions                                  #
+################################################################################
+
