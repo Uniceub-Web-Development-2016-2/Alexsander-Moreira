@@ -1,0 +1,94 @@
+## Desenvolvimento Web - 2016.02
+## Alexsander Moreira
+## Documento de Requisitos
+## Busapp
+
+swagger: '2.0'
+
+################################################################################
+#                              API Information                                 #
+################################################################################
+
+info:
+  description: The Busapp aims to facilitate the consultation of information regarding the various bus lines, as well as their paths, values and delay averages. Aiming the greatest comfort and security when using public transport. The software also tries to make users save time knowing the exact time that the transport will reach the stop / destination, avoiding downtime waiting for transport at the stop.
+  title: Busapp
+  version: "1.0.0"
+
+################################################################################
+#                  Host, Base Path, Schemes and Content Types                  #
+################################################################################
+
+host: localhost
+basePath: /api
+schemes:
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+  
+################################################################################
+#                                   Tags                                       #
+################################################################################ 
+
+tags:
+  - name: Users
+  - name: Schedules
+  - name: Companies
+  - name: Vehicles
+  - name: Officials
+  - name: Comments
+  - name: Ranking
+  - name: Delays
+  - name: Location
+  - name: Alerts
+
+################################################################################
+#                                   Parameters                                 #
+################################################################################
+
+
+
+################################################################################
+#                                           Paths                              #
+################################################################################
+
+# Describe your paths here
+paths:
+  # This is a path endpoint. Change it.
+  /Admin:
+    # This is a HTTP operation
+    get:
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        Gets `Person` objects.
+        Optional query param of **size** determines
+        size of returned array
+      # This is array of GET operation parameters:
+      parameters:
+        # An example parameter that is in query and is required
+        -
+          name: size
+          in: query
+          description: Size of array
+          required: true
+          type: number
+          format: double
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Successful response
+          # A schema describing your response object.
+          # Use JSON Schema format
+          schema:
+            title: ArrayOfPersons
+            type: array
+            items:
+              title: Person
+              type: object
+              properties:
+                name:
+                  type: string
+                single:
+                  type: boolean
