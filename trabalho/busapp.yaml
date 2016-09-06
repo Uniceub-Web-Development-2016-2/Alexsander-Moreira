@@ -40,7 +40,7 @@ tags:
   - name: Comments
   - name: Ranking
   - name: Delays
-  - name: Path
+  - name: Route
   - name: Alerts
 
 ################################################################################
@@ -69,10 +69,10 @@ parameters:
     type: number
     required: true
     
-  path-id:
-    name: path-id
+  route-id:
+    name: route-id
     in: path
-    description: The path identifier number
+    description: The route identifier number
     type: number
     required: true
 
