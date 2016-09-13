@@ -1,0 +1,119 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "The Busapp aims to facilitate the consultation of information regarding the various bus lines, as well as their paths, values and delay averages. Aiming the greatest comfort and security when using public transport. The software also tries to make users save time knowing the exact time that the transport will reach the stop / destination, avoiding downtime waiting for transport at the stop.",
+        "title": "Busapp",
+        "version": "1.0.0"
+    },
+    "host": "localhost",
+    "basePath": "/api",
+    "schemes": [
+        "https"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "Users"
+        },
+        {
+            "name": "Schedules"
+        },
+        {
+            "name": "Companies"
+        },
+        {
+            "name": "Vehicles"
+        },
+        {
+            "name": "Officials"
+        },
+        {
+            "name": "Comments"
+        },
+        {
+            "name": "Ranking"
+        },
+        {
+            "name": "Delays"
+        },
+        {
+            "name": "Path"
+        },
+        {
+            "name": "Alerts"
+        }
+    ],
+    "parameters": {
+        "user-id": {
+            "name": "user-id",
+            "in": "path",
+            "description": "The user identifier number",
+            "type": "number",
+            "required": true
+        },
+        "companies-id": {
+            "name": "companies-id",
+            "in": "path",
+            "description": "The companies identifier number",
+            "type": "number",
+            "required": true
+        },
+        "vehicles-id": {
+            "name": "vehicles-id",
+            "in": "path",
+            "description": "The vehicles identifier number",
+            "type": "number",
+            "required": true
+        },
+        "route-id": {
+            "name": "route-id",
+            "in": "path",
+            "description": "The route identifier number",
+            "type": "number",
+            "required": true
+        }
+    },
+    "paths": {
+        "/Admin": {
+            "get": {
+                "description": "Gets `Person` objects.\nOptional query param of **size** determines\nsize of returned array\n",
+                "parameters": [
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of array",
+                        "required": true,
+                        "type": "number",
+                        "format": "double"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "ArrayOfPersons",
+                            "type": "array",
+                            "items": {
+                                "title": "Person",
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "single": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
